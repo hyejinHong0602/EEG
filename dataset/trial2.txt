@@ -1,4 +1,3 @@
-C:\Users\smuid\PycharmProjects\pythonProject\venv\Scripts\python.exe C:/Users/smuid/PycharmProjects/pythonProject/main.py
 2022-07-05 14:03:26.843653 start
 2022-07-05 14:03:27.858215 rest
 2022-07-05 14:03:57.865057 red

@@ -10,7 +10,7 @@ window = Tk()
 
 window.geometry("1080x720")
 window.resizable(True, True)
-# window.attributes('-fullscreen',True) # 전체 화면
+window.attributes('-fullscreen',True) # 전체 화면
 window.configure(background='white')
 
 Label1 = Label(window, text="x", font=("G마켓 산스 TTF Bold", 44))
@@ -26,7 +26,7 @@ def start():
     print(current, 'start')
     Label1.config(text="aaa", font=("G마켓 산스 TTF Bold", 104), fg='white', bg='white')
     Label1.pack(pady=90)
-    Label2.config(text="Start", font=("G마켓 산스 TTF Bold", 70), bg='white')
+    Label2.config(text="End", font=("G마켓 산스 TTF Bold", 70), bg='white')
     Label2.pack()
 
 def red():
