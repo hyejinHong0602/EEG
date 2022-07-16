@@ -26,7 +26,7 @@ def start():
     print(current, 'start')
     Label1.config(text="aaa", font=("G마켓 산스 TTF Bold", 104), fg='white', bg='white')
     Label1.pack(pady=90)
-    Label2.config(text="End", font=("G마켓 산스 TTF Bold", 70), bg='white')
+    Label2.config(text="Start", font=("G마켓 산스 TTF Bold", 70), bg='white')
     Label2.pack()
 
 def red():
@@ -85,10 +85,11 @@ def end():
     Label1.pack(pady=90)
     Label2.config(text="END.", font=("G마켓 산스 TTF Bold", 70), fg='black', bg='white')
     Label2.pack()
+    f.close()
 
 sec = 1000
 init_rest = 30 # start와 red, blue, green 즉, 각 block 사이 rest time
-stimulus_interval = 5 # 자극 제시 텀. red 다음 red 보여주는 사이 간격
+stimulus_interval = 10 # 자극 제시 텀. red 다음 red 보여주는 사이 간격
 #----------------
 
 window.after(0, start) # start
