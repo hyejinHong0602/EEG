@@ -38,7 +38,7 @@ def red():
 
     Label1.config(text="aaa", font=("HY견고딕", 104), fg='white', bg='white')
     Label1.pack(pady=120)
-    Label2.config(text="Red", font=("HY견고딕", 70), fg='red', bg='white')
+    Label2.config(text="Orange", font=("HY견고딕", 70), fg='black', bg='white')
     Label2.pack()
 
 def green():
@@ -49,7 +49,7 @@ def green():
     # Label1.config(text="green을 떠올리세요.", font=("G마켓 산스 TTF Bold", 44), fg='green', bg='green')
     Label1.config(text="aaa", font=("HY견고딕", 104), fg='white', bg='white')
     Label1.pack(pady=120)
-    Label2.config(text="Green", font=("HY견고딕", 70), fg='green', bg='white')
+    Label2.config(text="Purple", font=("HY견고딕", 70), fg='black', bg='white')
     Label2.pack()
 
 # def green(): # 1 컬러랑 글씨 같이 있는거
@@ -71,7 +71,7 @@ def blue():
     # Label1.config(text="Blue를 떠올리세요.", font=("G마켓 산스 TTF Bold", 44), fg='blue')
     Label1.config(text="aaa", font=("HY견고딕", 104), fg='white', bg='white')
     Label1.pack(pady=120)
-    Label2.config(text="Blue", font=("HY견고딕", 70), fg='blue', bg='white')
+    Label2.config(text="White", font=("HY견고딕", 70), fg='black', bg='white')
     Label2.pack()
 
 def rest():
