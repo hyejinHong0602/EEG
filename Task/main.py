@@ -13,8 +13,8 @@ window.resizable(True, True)
 window.attributes('-fullscreen',True) # 전체 화면
 window.configure(background='white')
 
-Label1 = Label(window, text="x", font=("G마켓 산스 TTF Bold", 44))
-Label2 = Label(window, text="x", font=("G마켓 산스 TTF Bold", 44))
+Label1 = Label(window, text="x", font=("HY견고딕", 44))
+Label2 = Label(window, text="x", font=("HY견고딕", 44))
 
 current = str(datetime.datetime.now())
 current = current.replace(':','.')
@@ -24,54 +24,65 @@ def start():
     current = datetime.datetime.now()
     f.write(str(current)+ ' start\n')
     print(current, 'start')
-    Label1.config(text="aaa", font=("G마켓 산스 TTF Bold", 104), fg='white', bg='white')
+    Label1.config(text="aaa", font=("HY견고딕", 104), fg='white', bg='white')
     Label1.pack(pady=90)
-    Label2.config(text="Start", font=("G마켓 산스 TTF Bold", 70), bg='white')
+    Label2.config(text="Start", font=("HY견고딕", 70), bg='white')
     Label2.pack()
 
 def red():
     current = datetime.datetime.now()
     print(current, 'red')
-    f.write(str(current) + ' red')
+    f.write(str(current) + ' red\n')
     # print('red')
     # Label1.config(text="Redddd", font=("G마켓 산스 TTF Bold", 60), fg='red', bg='red')
 
-    Label1.config(text="aaa", font=("G마켓 산스 TTF Bold", 170), fg='red', bg='red')
+    Label1.config(text="aaa", font=("HY견고딕", 104), fg='white', bg='white')
     Label1.pack(pady=120)
-    Label2.config(text="Red", font=("G마켓 산스 TTF Bold", 60), fg='red', bg='white')
+    Label2.config(text="Red", font=("HY견고딕", 70), fg='red', bg='white')
     Label2.pack()
 
 def green():
     current = datetime.datetime.now()
     print(current, 'green')
-    f.write(str(current) + ' green')
+    f.write(str(current) + ' green\n')
     # print('green')
     # Label1.config(text="green을 떠올리세요.", font=("G마켓 산스 TTF Bold", 44), fg='green', bg='green')
-    Label1.config(text="aaa", font=("G마켓 산스 TTF Bold", 170), fg='green', bg='green')
+    Label1.config(text="aaa", font=("HY견고딕", 104), fg='white', bg='white')
     Label1.pack(pady=120)
-    Label2.config(text="Green", font=("G마켓 산스 TTF Bold", 60), fg='green', bg='white')
+    Label2.config(text="Green", font=("HY견고딕", 70), fg='green', bg='white')
     Label2.pack()
+
+# def green(): # 1 컬러랑 글씨 같이 있는거
+#     current = datetime.datetime.now()
+#     print(current, 'green')
+#     f.write(str(current) + ' green\n')
+#     # print('green')
+#     # Label1.config(text="green을 떠올리세요.", font=("G마켓 산스 TTF Bold", 44), fg='green', bg='green')
+#     Label1.config(text="aaa", font=("HY견고딕", 170), fg='green', bg='green')
+#     Label1.pack(pady=120)
+#     Label2.config(text="Green", font=("HY견고딕", 60), fg='green', bg='white')
+#     Label2.pack()
 
 def blue():
     current = datetime.datetime.now()
     print(current, 'blue')
-    f.write(str(current) + ' blue')
+    f.write(str(current) + ' blue\n')
     # print('blue')
     # Label1.config(text="Blue를 떠올리세요.", font=("G마켓 산스 TTF Bold", 44), fg='blue')
-    Label1.config(text="aaa", font=("G마켓 산스 TTF Bold", 170), fg='blue', bg='blue')
+    Label1.config(text="aaa", font=("HY견고딕", 104), fg='white', bg='white')
     Label1.pack(pady=120)
-    Label2.config(text="Blue", font=("G마켓 산스 TTF Bold", 60), fg='blue', bg='white')
+    Label2.config(text="Blue", font=("HY견고딕", 70), fg='blue', bg='white')
     Label2.pack()
 
 def rest():
     current = datetime.datetime.now()
     print(current, 'rest')
-    f.write(str(current) + ' rest')
+    f.write(str(current) + ' rest\n')
     # print('rest 5s')
     # Label1.config(text=" ", font=("G마켓 산스 TTF Bold", 44), bg='white')
-    Label1.config(text=" ", font=("G마켓 산스 TTF Bold", 0), bg='white')
+    Label1.config(text=" ", font=("HY견고딕", 0), bg='white')
     Label1.pack(pady=50)
-    Label2.config(text=" ", font=("G마켓 산스 TTF Bold", 0), bg='white')
+    Label2.config(text=" ", font=("HY견고딕", 0), bg='white')
     Label2.pack()
 
 
@@ -79,17 +90,18 @@ def rest():
 def end():
     current = datetime.datetime.now()
     print(current,' end')
-    f.write(str(current) + ' end')
+    f.write(str(current) + ' end\n')
     # Label1.config(text="End.", font=("G마켓 산스 TTF Bold", 44), fg='black')
-    Label1.config(text="aaa", font=("G마켓 산스 TTF Bold", 104), fg='white', bg='white')
+    Label1.config(text="aaa", font=("HY견고딕", 104), fg='white', bg='white')
     Label1.pack(pady=90)
-    Label2.config(text="END.", font=("G마켓 산스 TTF Bold", 70), fg='black', bg='white')
+    Label2.config(text="END.", font=("HY견고딕", 70), fg='black', bg='white')
     Label2.pack()
     f.close()
 
 sec = 1000
 init_rest = 30 # start와 red, blue, green 즉, 각 block 사이 rest time
 stimulus_interval = 10 # 자극 제시 텀. red 다음 red 보여주는 사이 간격
+on_time = 2
 #----------------
 
 window.after(0, start) # start
