@@ -38,7 +38,7 @@ def red():
     window.configure(background='white')
     Label1.config(text="aaa", font=("HY견고딕", 104), fg='white', bg='white')
     Label1.pack(pady=120)
-    Label2.config(text="Orange", font=("HY견고딕", 70), fg='black', bg='white')
+    Label2.config(text="Red", font=("HY견고딕", 70), fg='red', bg='white')
     Label2.pack()
 
 def green():
@@ -50,7 +50,7 @@ def green():
     window.configure(background='white')
     Label1.config(text="aaa", font=("HY견고딕", 104), fg='white', bg='white')
     Label1.pack(pady=120)
-    Label2.config(text="Purple", font=("HY견고딕", 70), fg='black', bg='white')
+    Label2.config(text="Green", font=("HY견고딕", 70), fg='green', bg='white')
     Label2.pack()
 
 # def green(): # 1 컬러랑 글씨 같이 있는거
@@ -70,9 +70,10 @@ def blue():
     f.write(str(current) + ' blue\n')
     # print('blue')
     # Label1.config(text="Blue를 떠올리세요.", font=("G마켓 산스 TTF Bold", 44), fg='blue')
+    window.configure(background='white')
     Label1.config(text="aaa", font=("HY견고딕", 104), fg='white', bg='white')
     Label1.pack(pady=120)
-    Label2.config(text="White", font=("HY견고딕", 70), fg='black', bg='white')
+    Label2.config(text="Blue", font=("HY견고딕", 70), fg='blue', bg='white')
     Label2.pack()
 
 # def attention():
@@ -88,8 +89,8 @@ def blue():
 #     Label2.pack()
 def attention():
     current = datetime.datetime.now()
-    print(current, 'rest')
-    f.write(str(current) + ' rest\n')
+    print(current, 'attention')
+    f.write(str(current) + ' attention\n')
     # print('rest 5s')
     # Label1.config(text=" ", font=("G마켓 산스 TTF Bold", 44), bg='white')
     window.configure(background='white')
@@ -105,9 +106,9 @@ def rest():
     # print('rest 5s')
     # Label1.config(text=" ", font=("G마켓 산스 TTF Bold", 44), bg='white')
     window.configure(background='black')
-    Label1.config(text=" ", font=("HY견고딕", 0), bg='white')
+    Label1.config(text=" ", font=("HY견고딕", 0), bg='black')
     Label1.pack(pady=50)
-    Label2.config(text=" ", font=("HY견고딕", 0), bg='white')
+    Label2.config(text=" ", font=("HY견고딕", 0), bg='black')
     Label2.pack()
 
 
@@ -121,6 +122,7 @@ def end():
     Label2.config(text="END.", font=("HY견고딕", 70), fg='black', bg='white')
     Label2.pack()
     f.close()
+    window.destroy()
 
 sec = 1000
 # init_rest = 30 # start와 red, blue, green 즉, 각 block 사이 rest time
@@ -136,21 +138,25 @@ window.after(0, start) # start
 window.after(sec, rest) # start 1초 뒤 부터 30초간 rest
 
 for i in range(0, 5):
-    window.after(stimulus_time * 1000 + init_rest * 1000 + stimulus_time * 1000 * i + attention_time * 1000 * i, red) # 1은 화면 띄워주는 시간, 5는 rest 시간
-    window.after(stimulus_time * 1000 + init_rest * 1000 + stimulus_time * 1000 * i + attention_time * 1000 * (i+1), attention)
-    window.after(stimulus_time * 1000 + init_rest * 1000 + stimulus_time * 1000 * (i + 1) + attention_time * 1000 * (i+1) + interval_rest * 1000 * i, rest)
+    window.after(stimulus_time * 1000 + init_rest * 1000 + stimulus_time * 1000 * i + attention_time * 1000 * i + interval_rest * 1000 * i, red) # 1은 화면 띄워주는 시간, 5는 rest 시간
+    window.after(stimulus_time * 1000 + init_rest * 1000 + stimulus_time * 1000 * (i + 1) + attention_time * 1000 * i + interval_rest * 1000 * i, attention)
+    window.after(stimulus_time * 1000 + init_rest * 1000 + stimulus_time * 1000 * (i + 1) + attention_time * 1000 * (i + 1) + interval_rest * 1000 * i, rest)
 # ----------------------------------------------- #
-#
-# for i in range(5, 10):
-#     window.after(sec + init_rest * sec * 2 + 1 * 1000 * i + stimulus_interval * 1000 * i, green) # 1은 화면 띄워주는 시간, 5는 rest 시간
-#     window.after(sec + init_rest * sec * 2 + 1 * 1000 * (i+1) + stimulus_interval * 1000 * i, rest)
-#
+
+for i in range(5, 10):
+    window.after(stimulus_time * 1000 + init_rest * 1000 + stimulus_time * 1000 * i + attention_time * 1000 * i + interval_rest * 1000 * i, green)  # 1은 화면 띄워주는 시간, 5는 rest 시간
+    window.after(stimulus_time * 1000 + init_rest * 1000 + stimulus_time * 1000 * (i + 1) + attention_time * 1000 * i + interval_rest * 1000 * i, attention)
+    window.after(stimulus_time * 1000 + init_rest * 1000 + stimulus_time * 1000 * (i + 1) + attention_time * 1000 * (i + 1) + interval_rest * 1000 * i, rest)
+    # window.after(sec + init_rest * sec * 2 + 1 * 1000 * i + stimulus_interval * 1000 * i, green) # 1은 화면 띄워주는 시간, 5는 rest 시간
+    # window.after(sec + init_rest * sec * 2 + 1 * 1000 * (i+1) + stimulus_interval * 1000 * i, rest)
+
 # # ----------------------------------------------- #
-# for i in range(10, 15):
-#     window.after(sec + init_rest * sec * 3 + 1 * 1000 * i + stimulus_interval * 1000 * i, blue) # 1은 화면 띄워주는 시간, 5는 rest 시간
-#     window.after(sec + init_rest * sec * 3 + 1 * 1000 * (i+1) + stimulus_interval * 1000 * i, rest)
-#
+for i in range(10, 15):
+    window.after(stimulus_time * 1000 + init_rest * 1000 + stimulus_time * 1000 * i + attention_time * 1000 * i + interval_rest * 1000 * i, blue)  # 1은 화면 띄워주는 시간, 5는 rest 시간
+    window.after(stimulus_time * 1000 + init_rest * 1000 + stimulus_time * 1000 * (i + 1) + attention_time * 1000 * i + interval_rest * 1000 * i, attention)
+    window.after(stimulus_time * 1000 + init_rest * 1000 + stimulus_time * 1000 * (i + 1) + attention_time * 1000 * (i + 1) + interval_rest * 1000 * i, rest)
+
 # # ----------------------------------------------- #
-# window.after(sec + init_rest * sec * 3 + 1 * 1000 * 15 + stimulus_interval * 1000 * 15, end)
+window.after(stimulus_time * 1000 + init_rest * 1000 + stimulus_time * 1000 * 15 + attention_time * 1000 * 15 + interval_rest * 1000 * 15, end)
 
 window.mainloop()
