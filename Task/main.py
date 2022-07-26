@@ -38,7 +38,7 @@ def red():
     window.configure(background='white')
     Label1.config(text="aaa", font=("HY견고딕", 104), fg='white', bg='white')
     Label1.pack(pady=120)
-    Label2.config(text="Blue", font=("HY견고딕", 70), fg='blue', bg='white')
+    Label2.config(text="Purple", font=("HY견고딕", 70), fg='purple', bg='white')
     Label2.pack()
 
 def green():
@@ -50,7 +50,7 @@ def green():
     window.configure(background='white')
     Label1.config(text="aaa", font=("HY견고딕", 104), fg='white', bg='white')
     Label1.pack(pady=120)
-    Label2.config(text="Cyan", font=("HY견고딕", 70), fg='cyan', bg='white')
+    Label2.config(text="Navy", font=("HY견고딕", 70), fg='navy', bg='white')
     Label2.pack()
 
 # def green(): # 1 컬러랑 글씨 같이 있는거
@@ -73,7 +73,7 @@ def blue():
     window.configure(background='white')
     Label1.config(text="aaa", font=("HY견고딕", 104), fg='white', bg='white')
     Label1.pack(pady=120)
-    Label2.config(text="Orange", font=("HY견고딕", 70), fg='orange', bg='white')
+    Label2.config(text="Red", font=("HY견고딕", 70), fg='red', bg='white')
     Label2.pack()
 
 # def attention():
